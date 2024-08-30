@@ -6,8 +6,7 @@ function App() {
   const [tapCount, setTapCount] = useState(0);
 
   useEffect(() => {
-    // TODO: Initialize Telegram Mini App SDK
-    // Example: window.Telegram.WebApp.ready()
+    window.Telegram.WebApp.ready()
   }, []);
 
   const handleTap = () => {
