@@ -21,7 +21,6 @@ function App() {
       <p>Balance: {balance.toFixed(2)} tokens</p>
       <p>Taps: {tapCount}</p>
       <button onClick={handleTap}>Tap to Earn!</button>
-      {/* TODO: Add withdrawal button and logic */}
       <p>Welcome, {window.Telegram.WebApp.initDataUnsafe?.user?.first_name || 'User'}!</p>
     </div>
   );
