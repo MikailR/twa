@@ -74,7 +74,8 @@ function App() {
     });
   };
 
-  const handleTap = () => {
+  const handleTap = (e) => {
+    e.preventDefault();
     const newTapCount = tapCount + 1;
     setTapCount(newTapCount);
     if (user) {
@@ -92,9 +93,8 @@ function App() {
     <div className="App">
       <h1>Tap to Earn</h1>
       <p>Taps: {tapCount}</p>
-      <button onClick={handleTap}>Tap to Earn!</button>
+      <div className='tap-button' onMouseUp={handleTap} onTouchEnd={handleTap}>Tap to Earn!</div>
       <p>Welcome, {twa.initDataUnsafe?.user?.first_name || 'User'}!</p>
-      <p>{signal}</p>
     </div>
   );
 }

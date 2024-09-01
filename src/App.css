@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.tap-button {
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 3px solid #000;
+  background-image: url('basic-panda.png');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  color: transparent;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+.tap-button:focus {
+  outline: none;
+}
