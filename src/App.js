@@ -84,7 +84,7 @@ function App() {
         tapCount: newTapCount,
       })
       .then(() => setSignal('Tap count updated'))
-      .catch(() => setSignal(`Error updating tap count: ${error.message}`));
+      .catch((error) => setSignal(`Error updating tap count: ${error.message}`));
       setSignal(JSON.stringify(obj));
     }
   };
