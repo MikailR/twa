@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, get } from "firebase/database";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import './App.css';
 
 const firebaseConfig = {
@@ -81,6 +81,7 @@ function App() {
     if (user) {
       setSignal('Updating tap count');
       const obj = set(ref(database, 'users/' + user.uid), {
+        telegramId: user.uid,
         tapCount: newTapCount,
       })
       .then(() => setSignal('Tap count updated'))
@@ -89,12 +90,23 @@ function App() {
     }
   };
 
+  const updateMyProfile = (user, displayName) => {
+    updateProfile(user, {
+      displayName: displayName,
+    })
+    .then(() => setSignal('Profile updated'))
+    .catch((error) => setSignal(`Error updating profile: ${error.message}`));
+  };
+
   return (
     <div className="App">
       <h1>Tap to Earn</h1>
       <p>Taps: {tapCount}</p>
       <div className='tap-button' onMouseUp={handleTap} onTouchEnd={handleTap}>Tap to Earn!</div>
       <p>Welcome, {twa.initDataUnsafe?.user?.first_name || 'User'}!</p>
+      <p>{signal}</p>
+      <button onClick={() => updateMyProfile(user, 'Young Panda')}>Update Profile</button>
+      <p>{auth.currentUser?.displayName}</p>
     </div>
   );
 }
