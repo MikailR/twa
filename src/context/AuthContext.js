@@ -9,7 +9,6 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     twa.ready();
@@ -27,17 +26,13 @@ export function AuthProvider({ children }) {
               .then((userCredential) => {
                 setUser(userCredential.user);
                 updateProfile(userCredential.user, { displayName: twa.initDataUnsafe?.displayName || "Young Panda" })
-                  .then(() => setUser(prevUser => ({ ...prevUser, displayName })))
-                  .catch((error) => setSignal(`Error updating profile: ${error.message}`));
+                  .catch((error) => console.error(`Error updating profile: ${error.message}`));
               })
               .catch((error) => console.error("Error creating user:", error));
           } else {
             console.error("Error signing in:", error);
           }
         })
-        .finally(() => setLoading(false));
-    } else {
-      setLoading(false);
     }
   }, []);
 
@@ -46,7 +41,7 @@ export function AuthProvider({ children }) {
     return () => unsubscribe();
   }, []);
 
-  const value = { user, loading };
+  const value = { user };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

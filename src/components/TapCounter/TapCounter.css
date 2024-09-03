@@ -1,0 +1,16 @@
+.tap-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 20px auto;
+}
+
+.tap-counter-icon {
+  font-size: 36px;
+}
+
+.tap-counter-value {
+  font-size: 28px;
+  font-weight: bold;
+}

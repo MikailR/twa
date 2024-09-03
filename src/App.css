@@ -2,27 +2,30 @@
   text-align: center;
 }
 
-.tap-button {
-  width: 80%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  border: 3px solid #000;
-  background-image: url('assets/basic-panda.png');
-  background-size: 80%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #fff;
-  cursor: pointer;
-  user-select: none;
-  display: inline-block;
-  text-align: center;
-  font-size: 16px;
-  color: transparent;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  touch-action: manipulation;
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-.tap-button:focus {
-  outline: none;
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
