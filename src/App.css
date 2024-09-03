@@ -29,3 +29,34 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.welcome-message {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  padding: 20px;
+}
+
+.button-row {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.button-row-2 {
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 25px;
+  background-color: #fff;
+  cursor: pointer;
+}

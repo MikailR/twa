@@ -49,10 +49,14 @@ function App() {
 
   return (
     <div className="App">
+      <div className="welcome-message">Welcome, {user?.displayName || 'User'}!</div>
+      <div className="button-row">Mini Games, Daily Challenges, Leaderboards, and more!</div>
       <TapCounter count={tapCount} />
       <TapButton onTap={handleTap} />
-      {/* <div className='tap-button' onMouseUp={handleTap} onTouchEnd={handleTap} /> */}
-      <p>Welcome, {user?.displayName || 'User'}!</p>
+      <div className="button-row-2">
+        <div className="button">🐼 Panda Power: 500/500</div>
+        <div className="button">🔥 Boost</div>
+      </div>
     </div>
   );
 }
