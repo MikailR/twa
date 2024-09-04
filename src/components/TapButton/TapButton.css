@@ -19,6 +19,7 @@
   touch-action: manipulation;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   transition: transform 0.1s, box-shadow 0.1s;
+  margin: 0 auto;
 }
 .tap-button:focus {
   outline: none;
