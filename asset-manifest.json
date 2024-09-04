@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/twa/static/css/main.e89898c3.css",
-    "main.js": "/twa/static/js/main.d017c5e1.js",
+    "main.js": "/twa/static/js/main.3a7bcd00.js",
     "static/media/basic-panda.png": "/twa/static/media/basic-panda.19dbd78aa8e596ed9674.png",
     "index.html": "/twa/index.html",
     "main.e89898c3.css.map": "/twa/static/css/main.e89898c3.css.map",
-    "main.d017c5e1.js.map": "/twa/static/js/main.d017c5e1.js.map"
+    "main.3a7bcd00.js.map": "/twa/static/js/main.3a7bcd00.js.map"
   },
   "entrypoints": [
     "static/css/main.e89898c3.css",
-    "static/js/main.d017c5e1.js"
+    "static/js/main.3a7bcd00.js"
   ]
 }
